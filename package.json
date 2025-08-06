@@ -1,7 +1,7 @@
 {
-  "name": "my-nodejs-library",
+  "name": "codes-command-tool",
   "version": "1.0.0",
-  "description": "A Node.js library built with TypeScript",
+  "description": "A powerful Node.js command execution tool that supports executing commands in specified directories",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -37,7 +37,14 @@
   "keywords": [
     "nodejs",
     "typescript",
-    "library"
+    "command",
+    "execution",
+    "spawn",
+    "process",
+    "directory",
+    "shell",
+    "cli",
+    "tool"
   ],
   "author": "",
   "license": "MIT",
