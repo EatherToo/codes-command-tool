@@ -5,3 +5,5 @@ export * from './types';
 export * from './read-folder';
 export * from './read-file-content';
 export * from './create-file';
+export * from './delete-file';
+export * from './delete-folder';

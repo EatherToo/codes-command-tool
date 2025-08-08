@@ -107,3 +107,23 @@ export interface CreateFileOptions {
   /** 是否允许在 fileName 中包含子路径，默认 false */
   allowNestedPath?: boolean;
 }
+
+/**
+ * 删除文件选项
+ */
+export interface DeleteFileOptions {
+  /** 是否允许在 fileName 中包含子路径，默认 false */
+  allowNestedPath?: boolean;
+}
+
+/**
+ * 删除目录选项
+ */
+export interface DeleteFolderOptions {
+  /** 是否递归删除，默认 true */
+  recursive?: boolean;
+  /** 强制删除（忽略不存在等错误），默认 false */
+  force?: boolean;
+  /** 是否允许在 folderName 中包含子路径，默认 false */
+  allowNestedPath?: boolean;
+}
