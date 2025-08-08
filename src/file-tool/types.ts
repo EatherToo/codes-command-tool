@@ -34,7 +34,7 @@ export interface ReadFolderOptions {
   recursive?: boolean;
   /** 最大递归深度，默认 无限制 */
   maxDepth?: number;
-  /** 是否包含隐藏文件，默认 false */
+  /** 是否包含隐藏文件，默认 true */
   includeHidden?: boolean;
   /** 文件过滤器，返回 true 则包含该文件 */
   filter?: (file: FileInfo) => boolean;
@@ -54,4 +54,40 @@ export interface FileTree {
   totalDirectories: number;
   /** 总大小（字节） */
   totalSize: number;
+}
+
+/**
+ * 文件内容读取选项
+ */
+export interface ReadFileContentOptions {
+  /** 文件编码，默认 'utf8' */
+  encoding?: BufferEncoding;
+  /** 是否检测文件类型，默认 true */
+  detectType?: boolean;
+  /** 最大文件大小限制（字节），默认 10MB */
+  maxSize?: number;
+}
+
+/**
+ * 文件内容信息
+ */
+export interface FileContentInfo {
+  /** 文件路径 */
+  path: string;
+  /** 文件名 */
+  name: string;
+  /** 文件扩展名 */
+  extension: string;
+  /** 文件大小（字节） */
+  size: number;
+  /** 最后修改时间 */
+  lastModified: Date;
+  /** 文件内容 */
+  content: string | Buffer;
+  /** 文件编码 */
+  encoding: BufferEncoding | 'binary';
+  /** 是否为文本文件 */
+  isText: boolean;
+  /** 行数（仅文本文件） */
+  lineCount?: number;
 }

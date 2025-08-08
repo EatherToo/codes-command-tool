@@ -90,8 +90,9 @@ describe('readFolder', () => {
 
     // 默认不包含隐藏文件
     const result1 = await readFolder(tempDir);
-    expect(result1.root.children).toHaveLength(1);
-    expect(result1.root.children?.[0].name).toBe('visible.txt');
+    expect(result1.root.children).toHaveLength(2);
+    expect(result1.root.children?.[1].name).toBe('visible.txt');
+    expect(result1.root.children?.[0].name).toBe('.hidden');
 
     // 包含隐藏文件
     const result2 = await readFolder(tempDir, { includeHidden: true });
