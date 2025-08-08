@@ -91,3 +91,19 @@ export interface FileContentInfo {
   /** 行数（仅文本文件） */
   lineCount?: number;
 }
+
+/**
+ * 创建文件选项
+ */
+export interface CreateFileOptions {
+  /** 是否允许覆盖已存在文件，默认 false */
+  overwrite?: boolean;
+  /** 目录不存在时是否自动创建，默认 true */
+  ensureDir?: boolean;
+  /** 文本内容编码，默认 'utf8'（当 content 为字符串时生效） */
+  encoding?: BufferEncoding;
+  /** 文件权限模式，例如 0o644，可选 */
+  mode?: number;
+  /** 是否允许在 fileName 中包含子路径，默认 false */
+  allowNestedPath?: boolean;
+}
