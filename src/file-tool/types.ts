@@ -127,3 +127,31 @@ export interface DeleteFolderOptions {
   /** 是否允许在 folderName 中包含子路径，默认 false */
   allowNestedPath?: boolean;
 }
+
+/**
+ * 补丁应用器构造选项
+ */
+export interface PatchApplierOptions {
+  /** 工作目录 */
+  workdir: string;
+  /** 补丁文件内容 */
+  patchContent: string;
+  /** 文件编码，默认 'utf8' */
+  encoding?: BufferEncoding;
+  /** 仅试运行，不写入磁盘，默认 false */
+  dryRun?: boolean;
+}
+
+/**
+ * 补丁应用结果
+ */
+export interface PatchResult {
+  /** 文件路径 */
+  path: string;
+  /** 应用后的内容 */
+  content: string;
+  /** 是否成功 */
+  success: boolean;
+  /** 错误信息（如果失败） */
+  error?: string;
+}
